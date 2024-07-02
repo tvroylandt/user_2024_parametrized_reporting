@@ -419,7 +419,7 @@ Thomas Vroylandt, Kantiles
 <p><strong>Contact me:</strong> <a href="mailto:thomas@kantiles.com">thomas@kantiles.com</a> <a href="https://github.com/tvroylandt"><iconify-icon inline="" icon="fa6-brands:github" aria-label="Icon github from fa6-brands Iconify.design set." title="Icon github from fa6-brands Iconify.design set."></iconify-icon></a> <a href="https://www.linkedin.com/in/thomas-vroylandt-9a2334190/"><iconify-icon inline="" icon="fa6-brands:linkedin" aria-label="Icon linkedin from fa6-brands Iconify.design set." title="Icon linkedin from fa6-brands Iconify.design set."></iconify-icon></a> <a href="https://tvroylandt.github.io/personal/"><i class="fa-solid fa-link" aria-label="link"></i></a></p>
 </section>
 <section>
-<section id="parametrized-reporting" class="title-slide slide level1 inverse center" data-background-image="img/music.jpg" data-background-color="#074d60">
+<section id="parametrized-reporting" class="title-slide slide level1 inverse center" data-background-color="#074d60">
 <h1>Parametrized Reporting ?</h1>
 
 </section>
@@ -478,7 +478,7 @@ Thomas Vroylandt, Kantiles
 </div>
 </section></section>
 <section>
-<section id="parameters" class="title-slide slide level1 inverse center" data-background-color="#074d60">
+<section id="parameters" class="title-slide slide level1 inverse center" data-background-image="img/music.jpg" data-background-color="#074d60">
 <h1>Parameters</h1>
 
 </section>
@@ -503,9 +503,49 @@ Thomas Vroylandt, Kantiles
 <div class="fragment">
 <p><i class="fa-solid fa-lightbulb" aria-label="lightbulb"></i> Or a combination of them</p>
 </div>
+</section>
+<section id="put-them-on-the-header" class="slide level2">
+<h2>Put them on the header</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"IA2030 Country Profile"</span></span>
+<span id="cb1-3"><a href=""></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"`r params$country`: 2023"</span></span>
+<span id="cb1-4"><a href=""></a></span>
+<span id="cb1-5"><a href=""></a><span class="co"># params to change here</span></span>
+<span id="cb1-6"><a href=""></a><span class="fu">params</span><span class="kw">:</span></span>
+<span id="cb1-7"><a href=""></a><span class="at">  </span><span class="fu">country</span><span class="kw">:</span><span class="at"> </span><span class="st">"Somalia"</span></span>
+<span id="cb1-8"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And re-use them with <code>params$XXX</code> :</p>
+<ul>
+<li>in code</li>
+<li>in inline text</li>
+<li>in your style</li>
+</ul>
+</section>
+<section id="pass-the-salt" class="slide level2">
+<h2>Pass the salt</h2>
+<ul>
+<li>CSS</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb2-1"><a href=""></a>&lt;style<span class="op">&gt;</span></span>
+<span id="cb2-2"><a href=""></a><span class="in">:root</span>{</span>
+<span id="cb2-3"><a href=""></a>  <span class="va">--country-name</span><span class="ch">:</span> <span class="st">"`r params$country`"</span><span class="op">;</span></span>
+<span id="cb2-4"><a href=""></a>}</span>
+<span id="cb2-5"><a href=""></a>&lt;/style<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Typst (can be nested)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href=""></a><span class="fu">country_name</span><span class="kw">:</span><span class="at"> </span><span class="st">'`r params$country`'</span></span>
+<span id="cb3-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section></section>
 <section>
-<section id="tools" class="title-slide slide level1 inverse center" data-background-color="#074d60">
+<section id="tools" class="title-slide slide level1 inverse center" data-background-image="img/tools.jpg" data-background-color="#074d60">
 <h1>Tools</h1>
 
 </section>
@@ -563,17 +603,64 @@ Thomas Vroylandt, Kantiles
 <p>Avoid as much as possible computations within the report (computation time and error-prone) Compute explicit missing data with tidyr Pay attention to formats Organize by the parameters (no duplication) Format with scales</p>
 </section></section>
 <section>
-<section id="graphs" class="title-slide slide level1 inverse center" data-background-color="#074d60">
+<section id="graphs" class="title-slide slide level1 inverse center" data-background-image="img/graphs.jpg" data-background-color="#074d60">
 <h1>Graphs</h1>
 
 </section>
-<section id="limits" class="slide level2">
-<h2>Limits</h2>
-<p>Ecological mistake and dispersion : mean and distribution –&gt; more extreme values : one report to rule them all (+ ring image)</p>
-<p>use functions loaded from outside</p>
-<p>Dimensions -&gt; use SVG + every chart is unique Think about the file size Pay attention to details</p>
-<p>See David advices about the content</p>
-<p>https://cascadiarconf.com/2024/regular/david_keyes/ https://github.com/rfortherestofus/data-viz-parameterized-reporting</p>
+<section id="pay-attention-to-limits" class="slide level2">
+<h2>Pay attention to limits</h2>
+<ul>
+<li>Your graphs should work in all cases</li>
+<li>The more granular you go, the more extreme your values will be</li>
+<li>You should plot your data first</li>
+</ul>
+<div class="fragment">
+<blockquote>
+<p><i class="fa-solid fa-lightbulb" aria-label="lightbulb"></i> If you got this warning from <code>ggplot2</code>, you probably messed up something with limits</p>
+<pre><code>Warning message:
+Removed 7 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</blockquote>
+</div>
+</section>
+<section id="pay-attention-to-limits-1" class="slide level2">
+<h2>Pay attention to limits</h2>
+<p>Limits can be set dynamically</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">ggplot</span>(...) <span class="sc">+</span></span>
+<span id="cb5-2"><a href=""></a>  ... <span class="sc">+</span></span>
+<span id="cb5-3"><a href=""></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb5-4"><a href=""></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2021</span>, <span class="dv">2023</span>, <span class="dv">1</span>),</span>
+<span id="cb5-5"><a href=""></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="fu">min</span>(df<span class="sc">$</span>year) <span class="sc">-</span> .<span class="dv">1</span>, <span class="fu">max</span>(df<span class="sc">$</span>year) <span class="sc">+</span> .<span class="dv">1</span>),</span>
+<span id="cb5-6"><a href=""></a>    <span class="at">position =</span> <span class="st">"top"</span>,</span>
+<span id="cb5-7"><a href=""></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Baseline"</span>, <span class="st">"2022"</span>, <span class="st">"2023"</span>)</span>
+<span id="cb5-8"><a href=""></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="handle-the-size" class="slide level2">
+<h2>Handle the size</h2>
+<ul>
+<li>Output as <code>svg</code> or <code>svglite</code> (with <code>fig-format</code>)</li>
+<li>Setup <code>fig-width</code> and <code>fig-height</code> for all plots</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Size can be set dynamically (in inches)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="cf">if</span>(params<span class="sc">$</span>country <span class="sc">==</span> <span class="st">"Somalia"</span>) {</span>
+<span id="cb6-2"><a href=""></a>  maps_width <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb6-3"><a href=""></a>  maps_height <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb6-4"><a href=""></a>} <span class="cf">else</span>{</span>
+<span id="cb6-5"><a href=""></a>  ...</span>
+<span id="cb6-6"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then used in chunks with <code>!expr</code></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href=""></a>```{r}</span>
+<span id="cb7-2"><a href=""></a>#| fig-width: !expr maps_width + .5</span>
+<span id="cb7-3"><a href=""></a>#| fig-height: !expr maps_height</span>
+<span id="cb7-4"><a href=""></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="set-up-a-reference" class="slide level2">
 <h2>Set up a reference</h2>
@@ -596,6 +683,29 @@ Thomas Vroylandt, Kantiles
 <div class="fragment">
 <p><i class="fa-solid fa-lightbulb" aria-label="lightbulb"></i> You can pick them all</p>
 </div>
+</section>
+<section id="set-up-a-reference-1" class="slide level2">
+<h2>Set up a reference</h2>
+
+<img data-src="img/ref_bar.png" class="r-stretch"></section>
+<section id="set-up-a-reference-2" class="slide level2">
+<h2>Set up a reference</h2>
+
+<img data-src="img/ref_others.png" class="r-stretch"></section>
+<section id="set-up-a-reference-3" class="slide level2">
+<h2>Set up a reference</h2>
+
+<img data-src="img/ref_time_global.png" class="r-stretch"></section>
+<section id="declutter-highlight" class="slide level2">
+<h2>Declutter &amp; highlight</h2>
+<ul>
+<li>don’t label everything</li>
+<li>hide small values</li>
+<li>think about labels position</li>
+<li>highlight what’s important</li>
+</ul>
+<p>See David advices about the content LINK</p>
+<p>https://cascadiarconf.com/2024/regular/david_keyes/ https://github.com/rfortherestofus/data-viz-parameterized-reporting</p>
 </section></section>
 <section>
 <section id="text" class="title-slide slide level1 inverse center" data-background-image="img/text.jpg" data-background-color="#074d60">
@@ -612,13 +722,13 @@ Thomas Vroylandt, Kantiles
 </ul></li>
 <li><p>Use <code>glue</code> or <code>epoxy</code> LINK https://pkg.garrickadenbuie.com/epoxy/index.html</p></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href=""></a>```{epoxy, .data=txt_data_1_3}</span>
-<span id="cb1-2"><a href=""></a>In {year}, measles elimination was &lt;span class = "txt-navy"&gt;achieved</span>
-<span id="cb1-3"><a href=""></a>&lt;/span&gt;in {nb_achieved} countries in the WHO region, while it was</span>
-<span id="cb1-4"><a href=""></a>&lt;span class = "txt-yellow"&gt;re-established&lt;/span&gt; in</span>
-<span id="cb1-5"><a href=""></a>{nb_reestablished} countries and &lt;span class = "txt-red"&gt;</span>
-<span id="cb1-6"><a href=""></a>not achieved&lt;/span&gt; in {nb_not_achieved} countries.</span>
-<span id="cb1-7"><a href=""></a>``</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href=""></a>```{epoxy, .data=txt_data_1_3}</span>
+<span id="cb8-2"><a href=""></a>In {year}, measles elimination was &lt;span class = "txt-navy"&gt;achieved</span>
+<span id="cb8-3"><a href=""></a>&lt;/span&gt;in {nb_achieved} countries in the WHO region, while it was</span>
+<span id="cb8-4"><a href=""></a>&lt;span class = "txt-yellow"&gt;re-established&lt;/span&gt; in</span>
+<span id="cb8-5"><a href=""></a>{nb_reestablished} countries and &lt;span class = "txt-red"&gt;</span>
+<span id="cb8-6"><a href=""></a>not achieved&lt;/span&gt; in {nb_not_achieved} countries.</span>
+<span id="cb8-7"><a href=""></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="highlight" class="slide level2">
 <h2>Highlight</h2>
@@ -658,15 +768,15 @@ Thomas Vroylandt, Kantiles
 <li>Check the number of pages !</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">walk</span>(<span class="fu">list.files</span>(<span class="st">"generated_reports/"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb2-2"><a href=""></a>     <span class="cf">function</span>(x) {</span>
-<span id="cb2-3"><a href=""></a>       pdf_length <span class="ot">&lt;-</span> pdftools<span class="sc">::</span><span class="fu">pdf_length</span>(x)</span>
-<span id="cb2-4"><a href=""></a>       <span class="cf">if</span> (pdf_length <span class="sc">!=</span> <span class="dv">6</span>) {</span>
-<span id="cb2-5"><a href=""></a>         <span class="fu">print</span>(<span class="fu">paste0</span>(x, <span class="st">" reports ERROR"</span>))</span>
-<span id="cb2-6"><a href=""></a>       } <span class="cf">else</span>{</span>
-<span id="cb2-7"><a href=""></a>         <span class="fu">print</span>(<span class="st">"OK"</span>)</span>
-<span id="cb2-8"><a href=""></a>       }</span>
-<span id="cb2-9"><a href=""></a>     })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">walk</span>(<span class="fu">list.files</span>(<span class="st">"generated_reports/"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb9-2"><a href=""></a>     <span class="cf">function</span>(x) {</span>
+<span id="cb9-3"><a href=""></a>       pdf_length <span class="ot">&lt;-</span> pdftools<span class="sc">::</span><span class="fu">pdf_length</span>(x)</span>
+<span id="cb9-4"><a href=""></a>       <span class="cf">if</span> (pdf_length <span class="sc">!=</span> <span class="dv">6</span>) {</span>
+<span id="cb9-5"><a href=""></a>         <span class="fu">print</span>(<span class="fu">paste0</span>(x, <span class="st">" reports ERROR"</span>))</span>
+<span id="cb9-6"><a href=""></a>       } <span class="cf">else</span>{</span>
+<span id="cb9-7"><a href=""></a>         <span class="fu">print</span>(<span class="st">"OK"</span>)</span>
+<span id="cb9-8"><a href=""></a>       }</span>
+<span id="cb9-9"><a href=""></a>     })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">

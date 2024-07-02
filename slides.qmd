@@ -31,7 +31,7 @@ execute:
 [{{< iconify fa6-brands linkedin >}}](https://www.linkedin.com/in/thomas-vroylandt-9a2334190/)
 [{{< fa link >}}](https://tvroylandt.github.io/personal/)
 
-# Parametrized Reporting ? {background-image="img/music.jpg"}
+# Parametrized Reporting ?
 
 ## From one report many
 
@@ -101,7 +101,7 @@ EXAMPLE OF PARAMETRIZED REPORTING
 :::
 :::
 
-# Parameters
+# Parameters {background-image="img/music.jpg"}
 
 ## Choose your parameters
 
@@ -127,7 +127,46 @@ Units
 {{< fa lightbulb >}} Or a combination of them
 :::
 
-# Tools
+## Put them on the header
+
+```{yaml}
+---
+title: "IA2030 Country Profile"
+subtitle: "`r params$country`: 2023"
+
+# params to change here
+params:
+  country: "Somalia"
+---
+```
+
+And re-use them with `params$XXX` :
+
+- in code
+- in inline text
+- in your style
+
+## Pass the salt
+
+- CSS
+
+```{css}
+<style>
+:root{
+  --country-name: "`r params$country`";
+}
+</style>
+```
+
+- Typst (can be nested)
+
+```{yaml}
+---
+country_name: '`r params$country`'
+---
+```
+
+# Tools {background-image="img/tools.jpg"}
 
 ## Pick up a tool
 
@@ -187,23 +226,65 @@ Organize by the parameters (no duplication)
 Format with scales
 
 
-# Graphs
+# Graphs {background-image="img/graphs.jpg"}
 
-## Limits
+## Pay attention to limits
 
-Ecological mistake and dispersion : mean and distribution --> more extreme values : one report to rule them all (+ ring image)
+- Your graphs should work in all cases
+- The more granular you go, the more extreme your values will be
+- You should plot your data first
 
+:::fragment
+> {{< fa lightbulb >}} If you got this warning from `ggplot2`, you probably messed up something with limits
+>
+>```
+>Warning message:
+>Removed 7 rows containing missing values or values outside the scale range
+>(`geom_point()`).
+>```
+:::
 
-use functions loaded from outside
+## Pay attention to limits
 
-Dimensions -> use SVG + every chart is unique
-Think about the file size
-Pay attention to details
+Limits can be set dynamically 
 
-See David advices about the content
+```{r}
+ggplot(...) +
+  ... +
+  scale_x_continuous(
+    breaks = seq(2021, 2023, 1),
+    limits = c(min(df$year) - .1, max(df$year) + .1),
+    position = "top",
+    labels = c("Baseline", "2022", "2023")
+  ) 
+```
 
-https://cascadiarconf.com/2024/regular/david_keyes/
-https://github.com/rfortherestofus/data-viz-parameterized-reporting
+## Handle the size
+
+- Output as `svg` or `svglite` (with `fig-format`)
+- Setup `fig-width` and `fig-height` for all plots
+
+:::fragment
+- Size can be set dynamically (in inches)
+
+```{r}
+if(params$country == "Somalia") {
+  maps_width <- 5
+  maps_height <- 4
+} else{
+  ...
+}
+```
+
+Then used in chunks with `!expr`
+
+````{verbatim}
+```{r}
+#| fig-width: !expr maps_width + .5
+#| fig-height: !expr maps_height
+```
+````
+:::
 
 ## Set up a reference
 
@@ -229,6 +310,30 @@ In time
 {{< fa lightbulb >}} You can pick them all
 :::
 
+## Set up a reference
+
+![](img/ref_bar.png)
+
+## Set up a reference
+
+![](img/ref_others.png)
+
+## Set up a reference
+
+![](img/ref_time_global.png)
+
+## Declutter & highlight
+
+- don't label everything
+- hide small values
+- think about labels position
+- highlight what's important
+
+See David advices about the content LINK
+
+https://cascadiarconf.com/2024/regular/david_keyes/
+https://github.com/rfortherestofus/data-viz-parameterized-reporting
+
 # Text {background-image="img/text.jpg"}
 
 ## Stay dynamic
@@ -248,7 +353,7 @@ In {year}, measles elimination was <span class = "txt-navy">achieved
 <span class = "txt-yellow">re-established</span> in
 {nb_reestablished} countries and <span class = "txt-red">
 not achieved</span> in {nb_not_achieved} countries.
-``
+```
 ````
 
 ## Highlight
