@@ -1,0 +1,100 @@
+/*-- scss:defaults --*/
+
+// fonts
+$font-family-sans-serif: "Outfit" !default;
+$font-family-monospace: "Fira Code" !default;
+
+// colors
+$body-bg: #f0f1eb !default;
+$body-color: #000 !default;
+$link-color: #074d60 !default;
+$selection-bg: #FFAE49 !default;
+
+// headings
+$presentation-heading-font: $font-family-sans-serif;
+$presentation-heading-color: $link-color;
+
+/*-- scss:rules --*/
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Outfit:wght@100..900&display=swap');
+
+/* logo */
+.reveal .slide-logo {
+    height: 70px !important;
+    width: 70px !important;
+    max-width: unset !important;
+    max-height: unset !important;
+  }
+
+.inverse h1 {
+    color: white;
+}
+
+/* rectangles */
+.small-box {
+    width: 500px;
+    height: 300px;
+    margin: 10px;
+
+    background: $link-color;
+
+    font-size: 48pt;
+    font-weight: bold;
+    color: white;
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* source */
+.source p {
+    font-size: 10pt;
+}
+
+/* image sur equipe */
+.small-box-img {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.round-img{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    padding-right: 20px;
+}
+
+/* box */
+
+.wide-box {
+    width: 80%;
+    margin: 10px;
+
+    background: $link-color;
+
+    color: white;
+
+    display: flex;
+    text-align: center;
+    justify-content: left;
+    align-items: center;
+
+}
+
+.wide-box .fa-solid{
+    margin-right: 100px;
+    margin-left: 10px;
+}
+
+/* table styling */
+.pagedtable, .pagedtable-footer {
+    font-size: 15pt;
+}

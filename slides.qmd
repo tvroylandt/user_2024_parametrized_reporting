@@ -1,0 +1,17 @@
+---
+title: "Parametrized Nice Reports with Quarto and PDF"
+subtitle: "UseR 2024"
+author: "Thomas Vroylandt, Kantiles"
+format: 
+  revealjs:
+    theme: "assets/custom.scss"
+    code-overflow: wrap
+    df-print: paged
+filters: [assets/bg_inverse.lua]
+execute: 
+  echo: true
+  message: false
+  warning: false
+---
+
+
