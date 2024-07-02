@@ -124,7 +124,7 @@ Units
 :::
 
 :::fragment
-{{< fa lightbulb >}} Or a combination of them
+{{< fa lightbulb >}} Combine them but check you have enough data
 :::
 
 ## Put them on the header
@@ -217,13 +217,23 @@ https://github.com/tvroylandt/pagedown_rr2021
 
 # Data {background-image="img/reference.jpg"}
 
-## Data
+## Prepare your data
 
-Avoid as much as possible computations within the report (computation time and error-prone)
-Compute explicit missing data with tidyr
-Pay attention to formats
-Organize by the parameters (no duplication)
-Format with scales
+- Avoid as much as possible computations within the report
+
+- Pay attention to formats - use `scales`
+
+- Make sure your date is unique by parameter
+
+## Check missing data
+
+Compute explicit missing data with `tidyr::complete`
+
+![](img/na_problem.png)
+
+
+
+
 
 
 # Graphs {background-image="img/graphs.jpg"}

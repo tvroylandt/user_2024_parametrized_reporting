@@ -501,7 +501,7 @@ Thomas Vroylandt, Kantiles
 </div>
 </div>
 <div class="fragment">
-<p><i class="fa-solid fa-lightbulb" aria-label="lightbulb"></i> Or a combination of them</p>
+<p><i class="fa-solid fa-lightbulb" aria-label="lightbulb"></i> Combine them but check you have enough data</p>
 </div>
 </section>
 <section id="put-them-on-the-header" class="slide level2">
@@ -598,10 +598,19 @@ Thomas Vroylandt, Kantiles
 <h1>Data</h1>
 
 </section>
-<section id="data-1" class="slide level2">
-<h2>Data</h2>
-<p>Avoid as much as possible computations within the report (computation time and error-prone) Compute explicit missing data with tidyr Pay attention to formats Organize by the parameters (no duplication) Format with scales</p>
-</section></section>
+<section id="prepare-your-data" class="slide level2">
+<h2>Prepare your data</h2>
+<ul>
+<li><p>Avoid as much as possible computations within the report</p></li>
+<li><p>Pay attention to formats - use <code>scales</code></p></li>
+<li><p>Make sure your date is unique by parameter</p></li>
+</ul>
+</section>
+<section id="check-missing-data" class="slide level2">
+<h2>Check missing data</h2>
+<p>Compute explicit missing data with <code>tidyr::complete</code></p>
+
+<img data-src="img/na_problem.png" class="r-stretch"></section></section>
 <section>
 <section id="graphs" class="title-slide slide level1 inverse center" data-background-image="img/graphs.jpg" data-background-color="#074d60">
 <h1>Graphs</h1>
