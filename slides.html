@@ -7,7 +7,10 @@
 <link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="slides_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="slides_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="slides_files/libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.555">
 
   <meta name="author" content="Thomas Vroylandt, Kantiles">
@@ -29,6 +32,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -320,6 +388,8 @@
       margin-right: 0; 
     }
   </style>
+  <link href="slides_files/libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+  <script src="slides_files/libs/pagedtable-1.1/js/pagedtable.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -338,46 +408,110 @@ Thomas Vroylandt, Kantiles
 </div>
 
 </section>
+<section id="whoami" class="slide level2">
+<h2>whoami</h2>
+<ul>
+<li><p>Founded a consultancy business : Kantiles LOGO + LINK</p></li>
+<li><p>Also work with R for the Rest of Us LOGO + LINK</p></li>
+<li><p>Creator of the <code>pagedreport</code> package LINK</p></li>
+<li><p>Produced 1000+ parametrized reports</p></li>
+</ul>
+<p><strong>Contact me:</strong> <a href="mailto:thomas@kantiles.com">thomas@kantiles.com</a> <a href="https://github.com/tvroylandt"><iconify-icon inline="" icon="fa6-brands:github" aria-label="Icon github from fa6-brands Iconify.design set." title="Icon github from fa6-brands Iconify.design set."></iconify-icon></a> <a href="https://www.linkedin.com/in/thomas-vroylandt-9a2334190/"><iconify-icon inline="" icon="fa6-brands:linkedin" aria-label="Icon linkedin from fa6-brands Iconify.design set." title="Icon linkedin from fa6-brands Iconify.design set."></iconify-icon></a> <a href="https://tvroylandt.github.io/personal/"><i class="fa-solid fa-link" aria-label="link"></i></a></p>
+</section>
 <section>
-<section id="who-am-i" class="title-slide slide level1 inverse center" data-background-color="#074d60">
-<h1>Who am I ?</h1>
-<p>Kantiles</p>
-<p>R for the Rest of Us</p>
-<p>pagedreport –&gt; quarto.report</p>
-<p>practitioner –&gt; some examples</p>
+<section id="parametrized-reporting" class="title-slide slide level1 inverse center" data-background-image="img/music.jpg" data-background-color="#074d60">
+<h1>Parametrized Reporting ?</h1>
+
 </section>
-<section id="parametrized-what" class="slide level2">
-<h2>Parametrized what ?</h2>
+<section id="from-one-report-many" class="slide level2">
+<h2>From one report many</h2>
+<div style="text-align: center;">
+<div class="icon-list">
+<p><i class="fa-solid fa-sliders fa-3x" aria-label="sliders"></i> <i class="fa-solid fa-plus fa-2x" aria-label="plus"></i> <i class="fa-solid fa-file fa-3x" aria-label="file"></i> <i class="fa-solid fa-plus fa-2x" aria-label="plus"></i> <i class="fa-solid fa-database fa-3x" aria-label="database"></i> <i class="fa-solid fa-plus fa-2x" aria-label="plus"></i> <i class="fa-solid fa-chart-simple fa-3x" aria-label="chart-simple"></i> <i class="fa-solid fa-plus fa-2x" aria-label="plus"></i> <i class="fa-solid fa-comments fa-3x" aria-label="comments"></i></p>
+</div>
+<div class="fragment">
+<p><i class="fa-solid fa-equals fa-2x" aria-label="equals"></i></p>
+</div>
+<div class="fragment">
+<p><i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i> <i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i> <i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i> <i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i> <i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i><i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i> <i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i> <i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i> <i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i> <i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i><i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i> <i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i> <i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i> <i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i> <i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i><i class="fa-solid fa-file-pdf fa-3x" aria-label="file-pdf"></i></p>
+</div>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>EXAMPLE OF PARAMETRIZED REPORTING</p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p>EXAMPLE OF PARAMETRIZED REPORTING</p>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p>EXAMPLE OF PARAMETRIZED REPORTING</p>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p>EXAMPLE OF PARAMETRIZED REPORTING</p>
+</section>
+<section id="why-not-a-dashboard" class="slide level2">
+<h2>Why not a dashboard ?</h2>
+<div class="columns">
+<div class="column fragment">
+<p><strong>Dashboard</strong></p>
 <ul>
-<li>areas</li>
-<li>sectors</li>
-<li>units (business, schools, etc…)</li>
-<li>combination of all of that</li>
+<li><p><u>Pull</u> approach</p></li>
+<li><p>Bring global &amp; detailed understanding</p></li>
+<li><p>Interactive viz and tables</p></li>
+<li><p>For analysts &amp; data practitioners</p></li>
+<li><p>https://</p></li>
 </ul>
-<p>Comparison :</p>
+</div><div class="column fragment">
+<p><strong>Reports</strong></p>
 <ul>
-<li>to global / above level</li>
-<li>to other</li>
-<li>to self in time</li>
+<li><p><u>Push</u> approach</p></li>
+<li><p>Bring local comprehension &amp; awareness</p></li>
+<li><p>Static tailored viz</p></li>
+<li><p>For people on the field &amp; partners</p></li>
+<li><p><u>Portable</u> Document Format (PDF)</p></li>
 </ul>
-<p>Ecological mistake and dispersion : mean and distribution –&gt; more extreme values</p>
-</section>
-<section id="parametrized-why" class="slide level2">
-<h2>Parametrized why ?</h2>
-<p>Back to field actors Can work with an online dashboard (push / pull). Nobody will read all your reports (–&gt; dashboard in that case). It aims to be created for multiple people</p>
-<p>Right level of details (enough to get the right sense but not overwhelmed by data)</p>
-<p>==&gt; PDF because need to be portable ==&gt; Information must be good designed and tailored because people aren’t always data practitioners</p>
-<p>Not new (can design everything by hand) but we now have tools to do it right</p>
-</section>
-<section id="parametrized-how" class="slide level2">
-<h2>Parametrized how ?</h2>
-<p>Quarto + engine + R / Python ==&gt; deeply nested</p>
-<p>Schema about design / content</p>
+</div>
+</div>
 </section></section>
 <section>
-<section id="steps" class="title-slide slide level1 inverse center" data-background-color="#074d60">
-<h1>Steps</h1>
+<section id="parameters" class="title-slide slide level1 inverse center" data-background-color="#074d60">
+<h1>Parameters</h1>
 
+</section>
+<section id="choose-your-parameters" class="slide level2">
+<h2>Choose your parameters</h2>
+<div class="quarto-layout-panel" data-layout="[1,1,1]">
+<div class="quarto-layout-row">
+<div class="fragment quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p>Areas</p>
+<p><img data-src="img/map.png"></p>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p>Sectors</p>
+<p><img data-src="img/sectors.png"></p>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p>Units</p>
+<p><img data-src="img/units.png"></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><i class="fa-solid fa-lightbulb" aria-label="lightbulb"></i> Or a combination of them</p>
+</div>
+</section></section>
+<section>
+<section id="tools" class="title-slide slide level1 inverse center" data-background-color="#074d60">
+<h1>Tools</h1>
+
+</section>
+<section id="pick-up-a-tool" class="slide level2">
+<h2>Pick up a tool</h2>
+<p>Quarto + engine + R / Python ==&gt; deeply nested</p>
 </section>
 <section id="design-your-template" class="slide level2">
 <h2>Design your template</h2>
@@ -393,52 +527,167 @@ Thomas Vroylandt, Kantiles
 </ul>
 <p>Still improvments to come and a little hacky but this will progress (no pressure on Christophe)</p>
 </section>
+<section id="quick-how-to-templating" class="slide level2">
+<h2>Quick how-to templating</h2>
+<p>Main page Margins Named pages Style Utility functions</p>
+<p>https://www.youtube.com/watch?v=Vk5q_pvp1EE https://github.com/tvroylandt/pagedown_rr2021</p>
+</section>
+<section id="tips" class="slide level2">
+<h2>Tips</h2>
+<ul>
+<li>make section visual (named pages)</li>
+<li>use columns to make side-by-side comparison</li>
+<li>don’t try to fit too many cases, sometimes if your reports are generating too much outputs, you need two templates</li>
+</ul>
+</section>
 <section id="lessons" class="slide level2">
 <h2>Lessons</h2>
 <ul>
 <li>use CSS vars</li>
-<li>pass content to CSS with vars</li>
+<li>pass content to CSS with vars (you can even parametrise images)</li>
 <li>think about the extreme cases</li>
 <li>remove some defaults</li>
+<li>no bootstrap</li>
+<li>absolute/relative positions</li>
+<li>negative margins + positive paddings</li>
+<li>child documents</li>
 </ul>
+</section></section>
+<section>
+<section id="data" class="title-slide slide level1 inverse center" data-background-image="img/reference.jpg" data-background-color="#074d60">
+<h1>Data</h1>
+
 </section>
-<section id="data" class="slide level2">
+<section id="data-1" class="slide level2">
 <h2>Data</h2>
 <p>Avoid as much as possible computations within the report (computation time and error-prone) Compute explicit missing data with tidyr Pay attention to formats Organize by the parameters (no duplication) Format with scales</p>
+</section></section>
+<section>
+<section id="graphs" class="title-slide slide level1 inverse center" data-background-color="#074d60">
+<h1>Graphs</h1>
+
 </section>
-<section id="content" class="slide level2">
-<h2>Content</h2>
+<section id="limits" class="slide level2">
+<h2>Limits</h2>
+<p>Ecological mistake and dispersion : mean and distribution –&gt; more extreme values : one report to rule them all (+ ring image)</p>
+<p>use functions loaded from outside</p>
 <p>Dimensions -&gt; use SVG + every chart is unique Think about the file size Pay attention to details</p>
 <p>See David advices about the content</p>
 <p>https://cascadiarconf.com/2024/regular/david_keyes/ https://github.com/rfortherestofus/data-viz-parameterized-reporting</p>
 </section>
-<section id="text" class="slide level2">
-<h2>Text</h2>
-<p>-&gt; can be loaded dynamically -&gt; epoxy can be useful -&gt; Multiple options</p>
-<p>-&gt; highlight (big numbers / colors / size / bold)</p>
+<section id="set-up-a-reference" class="slide level2">
+<h2>Set up a reference</h2>
+<div class="quarto-layout-panel" data-layout="[1,1,1]">
+<div class="quarto-layout-row">
+<div class="fragment quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p>To the global level</p>
+<p><img data-src="img/units_global.png"></p>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p>To others</p>
+<p><img data-src="img/units_others.png"></p>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p>In time</p>
+<p><img data-src="img/time_serie.png"></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><i class="fa-solid fa-lightbulb" aria-label="lightbulb"></i> You can pick them all</p>
+</div>
+</section></section>
+<section>
+<section id="text" class="title-slide slide level1 inverse center" data-background-image="img/text.jpg" data-background-color="#074d60">
+<h1>Text</h1>
+
 </section>
-<section id="render-all" class="slide level2">
-<h2>Render all</h2>
-<p>Map</p>
+<section id="stay-dynamic" class="slide level2">
+<h2>Stay dynamic</h2>
+<ul>
+<li><p>Be informative about comparisons :</p>
+<ul>
+<li>growth</li>
+<li>difference</li>
+</ul></li>
+<li><p>Use <code>glue</code> or <code>epoxy</code> LINK https://pkg.garrickadenbuie.com/epoxy/index.html</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href=""></a>```{epoxy, .data=txt_data_1_3}</span>
+<span id="cb1-2"><a href=""></a>In {year}, measles elimination was &lt;span class = "txt-navy"&gt;achieved</span>
+<span id="cb1-3"><a href=""></a>&lt;/span&gt;in {nb_achieved} countries in the WHO region, while it was</span>
+<span id="cb1-4"><a href=""></a>&lt;span class = "txt-yellow"&gt;re-established&lt;/span&gt; in</span>
+<span id="cb1-5"><a href=""></a>{nb_reestablished} countries and &lt;span class = "txt-red"&gt;</span>
+<span id="cb1-6"><a href=""></a>not achieved&lt;/span&gt; in {nb_not_achieved} countries.</span>
+<span id="cb1-7"><a href=""></a>``</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="highlight" class="slide level2">
+<h2>Highlight</h2>
+<div class="columns">
+<div class="column fragment">
+<p>Use :</p>
+<ul>
+<li><span style="font-size:2em;">size</span></li>
+<li><span style="color:#FFAE49;">color</span></li>
+<li><strong>weight</strong></li>
+</ul>
+<p><i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <code>&lt;span&gt;...&lt;/span&gt;</code></p>
+</div><div class="column fragment">
+<p><img data-src="img/big_numbers.png"></p>
+<p><img data-src="img/highlight_text.png"></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="generate" class="title-slide slide level1 inverse center" data-background-image="img/render.jpg" data-background-color="#074d60">
+<h1>Generate</h1>
+
+</section>
+<section id="render-them-all" class="slide level2">
+<h2>Render them all</h2>
+<ul>
+<li>list of parameters</li>
+<li><code>map</code></li>
+<li><code>quarto_render</code></li>
+<li><code>fs::file_move</code></li>
+</ul>
 </section>
 <section id="quality-insurance" class="slide level2">
 <h2>Quality insurance</h2>
+<div class="fragment">
 <ul>
-<li>number of pages</li>
-<li>extreme cases</li>
+<li>Check the number of pages !</li>
 </ul>
-</section>
-<section id="thanks" class="slide level2">
-<h2>Thanks</h2>
-</section>
-<section id="consulting-work" class="slide level2">
-<h2>Consulting work</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">walk</span>(<span class="fu">list.files</span>(<span class="st">"generated_reports/"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-2"><a href=""></a>     <span class="cf">function</span>(x) {</span>
+<span id="cb2-3"><a href=""></a>       pdf_length <span class="ot">&lt;-</span> pdftools<span class="sc">::</span><span class="fu">pdf_length</span>(x)</span>
+<span id="cb2-4"><a href=""></a>       <span class="cf">if</span> (pdf_length <span class="sc">!=</span> <span class="dv">6</span>) {</span>
+<span id="cb2-5"><a href=""></a>         <span class="fu">print</span>(<span class="fu">paste0</span>(x, <span class="st">" reports ERROR"</span>))</span>
+<span id="cb2-6"><a href=""></a>       } <span class="cf">else</span>{</span>
+<span id="cb2-7"><a href=""></a>         <span class="fu">print</span>(<span class="st">"OK"</span>)</span>
+<span id="cb2-8"><a href=""></a>       }</span>
+<span id="cb2-9"><a href=""></a>     })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li><p>Check reports with extreme values :</p>
+<ul>
+<li>long names</li>
+<li>outliers in data</li>
+<li>missing data</li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section id="thanks" class="title-slide slide level1 inverse center" data-background-color="#074d60">
+<h1>Thanks</h1>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
@@ -649,6 +898,44 @@ Thomas Vroylandt, Kantiles
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

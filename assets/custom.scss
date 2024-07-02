@@ -98,3 +98,11 @@ $presentation-heading-color: $link-color;
 .pagedtable, .pagedtable-footer {
     font-size: 15pt;
 }
+
+/* icons */
+.icon-list > p{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}

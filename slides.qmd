@@ -10,54 +10,128 @@ format:
 filters: [assets/bg_inverse.lua]
 execute: 
   echo: true
+  eval: false
   message: false
   warning: false
 ---
 
-# Who am I ?
+## whoami
 
-Kantiles
+- Founded a consultancy business : Kantiles LOGO + LINK
 
-R for the Rest of Us
+- Also work with R for the Rest of Us LOGO + LINK
 
-pagedreport --> quarto.report
+- Creator of the `pagedreport` package LINK
 
-practitioner --> some examples
+- Produced 1000+ parametrized reports
 
-## Parametrized what ?
+**Contact me:**
+[thomas@kantiles.com](mailto:thomas@kantiles.com)
+[{{< iconify fa6-brands github >}}](https://github.com/tvroylandt)
+[{{< iconify fa6-brands linkedin >}}](https://www.linkedin.com/in/thomas-vroylandt-9a2334190/)
+[{{< fa link >}}](https://tvroylandt.github.io/personal/)
 
-- areas
-- sectors
-- units (business, schools, etc...)
-- combination of all of that
+# Parametrized Reporting ? {background-image="img/music.jpg"}
 
-Comparison :
+## From one report many
 
-- to global / above level
-- to other
-- to self in time
+:::{style="text-align: center;"}
+:::{.icon-list}
+{{< fa sliders size=3x >}}  {{< fa plus size=2x >}} {{< fa file size=3x >}} {{< fa plus size=2x >}} {{< fa database size=3x >}} {{< fa plus size=2x >}} {{< fa chart-simple size=3x >}} {{< fa plus size=2x >}} {{< fa comments size=3x >}}
+:::
+:::{.fragment}
+{{< fa equals size=2x >}}
+:::
 
-Ecological mistake and dispersion : mean and distribution --> more extreme values
+:::{.fragment}
+{{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}}{{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}}{{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}}{{< fa file-pdf size=3x >}}
+:::
+:::
 
-## Parametrized why ?
+## 
 
-Back to field actors
-Can work with an online dashboard (push / pull). Nobody will read all your reports (--> dashboard in that case). It aims to be created for multiple people
+EXAMPLE OF PARAMETRIZED REPORTING
 
-Right level of details (enough to get the right sense but not overwhelmed by data)
+## 
 
-==> PDF because need to be portable
-==> Information must be good designed and tailored because people aren't always data practitioners
+EXAMPLE OF PARAMETRIZED REPORTING
 
-Not new (can design everything by hand) but we now have tools to do it right
+## 
 
-## Parametrized how ?
+EXAMPLE OF PARAMETRIZED REPORTING
+
+## 
+
+EXAMPLE OF PARAMETRIZED REPORTING
+
+## Why not a dashboard ?
+
+:::columns
+:::{.column .fragment}
+
+**Dashboard**
+
+- <u>Pull</u> approach
+
+- Bring global & detailed understanding
+
+- Interactive viz and tables
+
+- For analysts & data practitioners
+
+- https://
+
+:::
+
+
+:::{.column .fragment}
+
+**Reports**
+
+- <u>Push</u> approach
+
+- Bring local comprehension & awareness
+
+- Static tailored viz
+
+- For people on the field & partners
+
+- <u>Portable</u> Document Format (PDF)
+
+:::
+:::
+
+# Parameters
+
+## Choose your parameters
+
+:::{layout="[1,1,1]"}
+:::fragment
+Areas
+
+![](img/map.png)
+:::
+:::fragment
+Sectors
+
+![](img/sectors.png)
+:::
+:::fragment
+Units
+
+![](img/units.png)
+:::
+:::
+
+:::fragment
+{{< fa lightbulb >}} Or a combination of them
+:::
+
+# Tools
+
+## Pick up a tool
 
 Quarto + engine + R / Python ==> deeply nested
-
-Schema about design / content
-
-# Steps
 
 ## Design your template
 
@@ -89,6 +163,7 @@ https://github.com/tvroylandt/pagedown_rr2021
 
 - make section visual (named pages)
 - use columns to make side-by-side comparison
+- don't try to fit too many cases, sometimes if your reports are generating too much outputs, you need two templates
 
 ## Lessons
 
@@ -99,6 +174,9 @@ https://github.com/tvroylandt/pagedown_rr2021
 - no bootstrap
 - absolute/relative positions
 - negative margins + positive paddings
+- child documents
+
+# Data {background-image="img/reference.jpg"}
 
 ## Data
 
@@ -108,7 +186,13 @@ Pay attention to formats
 Organize by the parameters (no duplication)
 Format with scales
 
-## Content
+
+# Graphs
+
+## Limits
+
+Ecological mistake and dispersion : mean and distribution --> more extreme values : one report to rule them all (+ ring image)
+
 
 use functions loaded from outside
 
@@ -121,23 +205,108 @@ See David advices about the content
 https://cascadiarconf.com/2024/regular/david_keyes/
 https://github.com/rfortherestofus/data-viz-parameterized-reporting
 
-## Text
+## Set up a reference
 
--> can be loaded dynamically
--> epoxy can be useful
--> Multiple options
+:::{layout="[1,1,1]"}
+:::fragment
+To the global level
 
--> highlight (big numbers / colors / size / bold)
+![](img/units_global.png)
+:::
+:::fragment
+To others
 
-## Render all
+![](img/units_others.png)
+:::
+:::fragment
+In time
 
-Map
+![](img/time_serie.png)
+:::
+:::
+
+:::fragment
+{{< fa lightbulb >}} You can pick them all
+:::
+
+# Text {background-image="img/text.jpg"}
+
+## Stay dynamic
+
+- Be informative about comparisons :
+
+  - growth
+  - difference
+  
+- Use `glue` or `epoxy` LINK https://pkg.garrickadenbuie.com/epoxy/index.html
+
+
+````{verbatim}
+```{epoxy, .data=txt_data_1_3}
+In {year}, measles elimination was <span class = "txt-navy">achieved
+</span>in {nb_achieved} countries in the WHO region, while it was
+<span class = "txt-yellow">re-established</span> in
+{nb_reestablished} countries and <span class = "txt-red">
+not achieved</span> in {nb_not_achieved} countries.
+``
+````
+
+## Highlight
+
+:::columns
+:::{.column .fragment}
+Use :
+
+- <span style="font-size:2em;">size</span>
+- <span style="color:#FFAE49;">color</span>
+- **weight**
+
+{{< fa arrow-right >}} `<span>...</span>`
+
+:::
+:::{.column .fragment}
+![](img/big_numbers)
+
+![](img/highlight_text)
+:::
+:::
+
+# Generate {background-image="img/render.jpg"}
+
+## Render them all
+
+- list of parameters
+- `map`
+- `quarto_render`
+- `fs::file_move`
 
 ## Quality insurance
 
-- number of pages
-- extreme cases
+:::fragment
+- Check the number of pages !
 
-## Thanks
+```{r}
+walk(list.files("generated_reports/", full.names = TRUE),
+     function(x) {
+       pdf_length <- pdftools::pdf_length(x)
+       if (pdf_length != 6) {
+         print(paste0(x, " reports ERROR"))
+       } else{
+         print("OK")
+       }
+     })
+```
+:::
 
-## Consulting work
+:::fragment
+- Check reports with extreme values :
+
+  - long names
+  - outliers in data
+  - missing data
+
+:::
+
+# Thanks
+
+
