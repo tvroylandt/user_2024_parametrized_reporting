@@ -338,14 +338,107 @@ Thomas Vroylandt, Kantiles
 </div>
 
 </section>
-<section class="slide level2">
+<section>
+<section id="who-am-i" class="title-slide slide level1 inverse center" data-background-color="#074d60">
+<h1>Who am I ?</h1>
+<p>Kantiles</p>
+<p>R for the Rest of Us</p>
+<p>pagedreport –&gt; quarto.report</p>
+<p>practitioner –&gt; some examples</p>
+</section>
+<section id="parametrized-what" class="slide level2">
+<h2>Parametrized what ?</h2>
+<ul>
+<li>areas</li>
+<li>sectors</li>
+<li>units (business, schools, etc…)</li>
+<li>combination of all of that</li>
+</ul>
+<p>Comparison :</p>
+<ul>
+<li>to global / above level</li>
+<li>to other</li>
+<li>to self in time</li>
+</ul>
+<p>Ecological mistake and dispersion : mean and distribution –&gt; more extreme values</p>
+</section>
+<section id="parametrized-why" class="slide level2">
+<h2>Parametrized why ?</h2>
+<p>Back to field actors Can work with an online dashboard (push / pull). Nobody will read all your reports (–&gt; dashboard in that case). It aims to be created for multiple people</p>
+<p>Right level of details (enough to get the right sense but not overwhelmed by data)</p>
+<p>==&gt; PDF because need to be portable ==&gt; Information must be good designed and tailored because people aren’t always data practitioners</p>
+<p>Not new (can design everything by hand) but we now have tools to do it right</p>
+</section>
+<section id="parametrized-how" class="slide level2">
+<h2>Parametrized how ?</h2>
+<p>Quarto + engine + R / Python ==&gt; deeply nested</p>
+<p>Schema about design / content</p>
+</section></section>
+<section>
+<section id="steps" class="title-slide slide level1 inverse center" data-background-color="#074d60">
+<h1>Steps</h1>
 
+</section>
+<section id="design-your-template" class="slide level2">
+<h2>Design your template</h2>
+<p>Depends on how much control you need</p>
+<p>Options :</p>
+<ul>
+<li>LaTeX (!!!)</li>
+<li>typst</li>
+<li>pagedown</li>
+<li>quarto.report</li>
+<li>weasyprint</li>
+<li>pagedjs-cli</li>
+</ul>
+<p>Still improvments to come and a little hacky but this will progress (no pressure on Christophe)</p>
+</section>
+<section id="lessons" class="slide level2">
+<h2>Lessons</h2>
+<ul>
+<li>use CSS vars</li>
+<li>pass content to CSS with vars</li>
+<li>think about the extreme cases</li>
+<li>remove some defaults</li>
+</ul>
+</section>
+<section id="data" class="slide level2">
+<h2>Data</h2>
+<p>Avoid as much as possible computations within the report (computation time and error-prone) Compute explicit missing data with tidyr Pay attention to formats Organize by the parameters (no duplication) Format with scales</p>
+</section>
+<section id="content" class="slide level2">
+<h2>Content</h2>
+<p>Dimensions -&gt; use SVG + every chart is unique Think about the file size Pay attention to details</p>
+<p>See David advices about the content</p>
+<p>https://cascadiarconf.com/2024/regular/david_keyes/ https://github.com/rfortherestofus/data-viz-parameterized-reporting</p>
+</section>
+<section id="text" class="slide level2">
+<h2>Text</h2>
+<p>-&gt; can be loaded dynamically -&gt; epoxy can be useful -&gt; Multiple options</p>
+<p>-&gt; highlight (big numbers / colors / size / bold)</p>
+</section>
+<section id="render-all" class="slide level2">
+<h2>Render all</h2>
+<p>Map</p>
+</section>
+<section id="quality-insurance" class="slide level2">
+<h2>Quality insurance</h2>
+<ul>
+<li>number of pages</li>
+<li>extreme cases</li>
+</ul>
+</section>
+<section id="thanks" class="slide level2">
+<h2>Thanks</h2>
+</section>
+<section id="consulting-work" class="slide level2">
+<h2>Consulting work</h2>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

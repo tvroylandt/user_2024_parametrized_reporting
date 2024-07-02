@@ -14,4 +14,130 @@ execute:
   warning: false
 ---
 
+# Who am I ?
 
+Kantiles
+
+R for the Rest of Us
+
+pagedreport --> quarto.report
+
+practitioner --> some examples
+
+## Parametrized what ?
+
+- areas
+- sectors
+- units (business, schools, etc...)
+- combination of all of that
+
+Comparison :
+
+- to global / above level
+- to other
+- to self in time
+
+Ecological mistake and dispersion : mean and distribution --> more extreme values
+
+## Parametrized why ?
+
+Back to field actors
+Can work with an online dashboard (push / pull). Nobody will read all your reports (--> dashboard in that case). It aims to be created for multiple people
+
+Right level of details (enough to get the right sense but not overwhelmed by data)
+
+==> PDF because need to be portable
+==> Information must be good designed and tailored because people aren't always data practitioners
+
+Not new (can design everything by hand) but we now have tools to do it right
+
+## Parametrized how ?
+
+Quarto + engine + R / Python ==> deeply nested
+
+Schema about design / content
+
+# Steps
+
+## Design your template
+
+Depends on how much control you need
+
+Options : 
+
+- LaTeX (!!!)
+- typst
+- pagedown
+- quarto.report
+- weasyprint
+- pagedjs-cli
+
+Still improvments to come and a little hacky but this will progress (no pressure on Christophe)
+
+## Quick how-to templating
+
+Main page
+Margins
+Named pages
+Style
+Utility functions
+
+https://www.youtube.com/watch?v=Vk5q_pvp1EE
+https://github.com/tvroylandt/pagedown_rr2021
+
+## Tips
+
+- make section visual (named pages)
+- use columns to make side-by-side comparison
+
+## Lessons
+
+- use CSS vars
+- pass content to CSS with vars (you can even parametrise images)
+- think about the extreme cases
+- remove some defaults
+- no bootstrap
+- absolute/relative positions
+- negative margins + positive paddings
+
+## Data
+
+Avoid as much as possible computations within the report (computation time and error-prone)
+Compute explicit missing data with tidyr
+Pay attention to formats
+Organize by the parameters (no duplication)
+Format with scales
+
+## Content
+
+use functions loaded from outside
+
+Dimensions -> use SVG + every chart is unique
+Think about the file size
+Pay attention to details
+
+See David advices about the content
+
+https://cascadiarconf.com/2024/regular/david_keyes/
+https://github.com/rfortherestofus/data-viz-parameterized-reporting
+
+## Text
+
+-> can be loaded dynamically
+-> epoxy can be useful
+-> Multiple options
+
+-> highlight (big numbers / colors / size / bold)
+
+## Render all
+
+Map
+
+## Quality insurance
+
+- number of pages
+- extreme cases
+
+## Thanks
+
+## Consulting work
