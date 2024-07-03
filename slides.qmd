@@ -48,21 +48,37 @@ execute:
 :::
 :::
 
-## 
+## PSC Housing [{{< fa link >}}](https://housingprofiles.pschousing.org/) [{{< fa link >}}](https://www.ctdata.org/blog/2020-psc-housing-data-profiles)
 
-EXAMPLE OF PARAMETRIZED REPORTING
+:::{layout="[1,1]" .shadow}
+![](img/psc 1.jpg){width=90%}
 
-## 
+![](img/psc 2.jpg){width=90%}
+:::
 
-EXAMPLE OF PARAMETRIZED REPORTING
+## Oregon Voices [{{< fa link >}}](https://orvoices.org/your-county/)
 
-## 
+:::{layout="[1,1]" .shadow}
+![](img/or_voices_1.jpg){width=90%}
 
-EXAMPLE OF PARAMETRIZED REPORTING
+![](img/or_voices_2.jpg){width=90%}
+:::
 
-## 
+## IA2030 [{{< fa link >}}](https://scorecard.immunizationagenda2030.org/pdfs/afg.pdf) [{{< fa link >}}](https://publichealth.jhu.edu/ivac/2024/new-ia2030-country-profiles-to-track-immunization-achievements)
 
-EXAMPLE OF PARAMETRIZED REPORTING
+:::{layout="[1,1]" .shadow}
+![](img/Afghanistan a.jpg){width=90%}
+
+![](img/Afghanistan b.jpg){width=90%}
+:::
+
+## Child Welfare Program
+
+:::{layout="[1,1]" .shadow}
+![](img/cwp_1.jpg){width=90%}
+
+![](img/cwp_2.jpg){width=90%}
+:::
 
 ## Why not a dashboard ?
 
@@ -215,22 +231,22 @@ Named pages
 Style
 Utility functions
 
-## Tips
-
-- make section visual (named pages)
-- use columns to make side-by-side comparison
-- don't try to fit too many cases, sometimes if your reports are generating too much outputs, you need two templates
-
 ## Lessons
 
 - use CSS vars
 - pass content to CSS with vars (you can even parametrise images)
-- think about the extreme cases
+- think about the extreme cases (long names)
 - remove some defaults
 - no bootstrap
 - absolute/relative positions
 - negative margins + positive paddings
 - child documents
+
+## Tips
+
+- make section visual (named pages)
+- use columns to make side-by-side comparison
+- don't try to fit too many cases, sometimes if your reports are generating too much outputs, you need two templates
 
 ## Presenting `quarto.report`
 

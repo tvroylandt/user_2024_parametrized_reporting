@@ -106,3 +106,9 @@ $presentation-heading-color: $link-color;
   justify-content: space-around;
   align-items: center;
 }
+
+/* shadow on images */
+.shadow img {
+  box-shadow: 10px 10px 10px darkgrey;
+  
+}
