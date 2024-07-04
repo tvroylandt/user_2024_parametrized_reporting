@@ -7,6 +7,7 @@ format:
     theme: "assets/custom.scss"
     code-overflow: wrap
     df-print: paged
+    pdf-separate-fragments: true
 filters: [assets/bg_inverse.lua]
 execute: 
   echo: true
