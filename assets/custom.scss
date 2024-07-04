@@ -107,8 +107,12 @@ $presentation-heading-color: $link-color;
   align-items: center;
 }
 
-/* shadow on images */
+/*  images */
 .shadow img {
   box-shadow: 10px 10px 10px darkgrey;
   
+}
+
+.bottom-img img{
+  vertical-align: bottom;
 }

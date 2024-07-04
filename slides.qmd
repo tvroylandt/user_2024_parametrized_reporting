@@ -17,11 +17,11 @@ execute:
 
 ## whoami
 
-- Founded a consultancy business : Kantiles LOGO + LINK
+- Founded a consultancy business <span class="bottom-img">![](img/logo_kantiles_new_dark.png){width=20%}</span>
 
-- Also work with R for the Rest of Us LOGO + LINK
+- Also work with [R for the Rest of Us](https://rfortherestofus.com/consulting)  <span class="bottom-img">![](https://rfortherestofus.com/visuals/rru-logo-blue-square.png){width=10%}</span>
 
-- Creator of the `pagedreport` package LINK
+- Creator of the `pagedreport` package [{{< fa link >}}](https://pagedreport.rfortherestofus.com/)
 
 - Produced 1000+ parametrized reports
 
@@ -31,7 +31,7 @@ execute:
 [{{< iconify fa6-brands linkedin >}}](https://www.linkedin.com/in/thomas-vroylandt-9a2334190/)
 [{{< fa link >}}](https://tvroylandt.github.io/personal/)
 
-# Parametrized Reporting ?
+# Parametrized Reporting ? {background-image="img/print.jpg"}
 
 ## From one report many
 
@@ -44,7 +44,7 @@ execute:
 :::
 
 :::{.fragment}
-{{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}}{{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}}{{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}}{{< fa file-pdf size=3x >}}
+{{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}}{{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}}{{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}}{{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}}{{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}} {{< fa file-pdf size=3x >}}
 :::
 :::
 
@@ -117,6 +117,25 @@ execute:
 :::
 :::
 
+## Why not something else ?
+
+- Infographics
+- Graphs
+- Analysis note
+- Excel files
+- Data API
+- ...
+
+## Why not something else ?
+
+Ask: 
+
+- for what ?
+- for who ?
+- frequency
+- ability to build yourself
+- maintenance
+
 # Parameters {background-image="img/music.jpg"}
 
 ## Choose your parameters
@@ -140,7 +159,7 @@ Units
 :::
 
 :::fragment
-{{< fa lightbulb >}} Combine them but check you have enough data
+> {{< fa lightbulb >}} Combine them but check you have enough data
 :::
 
 ## Put them on the header
@@ -186,69 +205,525 @@ country_name: '`r params$country`'
 
 ## Pick up a tool
 
-Quarto (Pandoc convert MD to HTML) + engine (convert style to PDF) + R / Python (computations)
+:::fragment
+![](https://quarto.org/quarto.png){width=50% fig-align="center"}
+:::
 
-## Pick up a tool
+:::columns
 
-Engine choices: 
+:::{.column width=33% .fragment}
+**Text**
 
-- LaTeX
-- Typst
-- CSS based :
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/416px-Markdown-mark.svg.png){width=40%}
 
-  - `weasyprint`
-  - `pagedjs-cli` / `pagedown`
-  - Prince
-  - ...
-  
+:::
+
+:::{.column width=33% .fragment}
+**Computations**
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1448px-R_logo.svg.png){width=35%}
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/230px-Python-logo-notext.svg.png){width=30%}
+
+:::
+
+:::{.column width=33% .fragment}
+**PDF engines**
+
+<span class="bottom-img">![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/1599px-LaTeX_logo.svg.png){width=40%}</span>
+
+<span class="bottom-img">![](https://typst.app/assets/images/typst.svg){width=36%}</span>
+
+<span class="bottom-img">![](https://raw.githubusercontent.com/Kozea/WeasyPrint/gh-pages/css/img/logotype-black.svg){width=80%}</span>
+
+<span class="bottom-img">![](img/pagedjs.png){width=80%}</span>
+
+:::
+
+
+:::
+
 ## Comparison
 
-Pros/cons of Typst, `weasyprint`, `pagedjs-cli`
+:::columns
+:::{.column width=33% .fragment}
 
-Depends on how much control you need
-Still improvments to come and a little hacky but this will progress (no pressure on Christophe)
+**Typst**
 
-## Create a template with Typst
+- Quarto format
 
-- Two files : 
+- Lightning quick
+
+- Custom langage for layout
+
+- Great for simple templates
+
+:::
+
+
+:::{.column width=33% .fragment}
+
+**`weasyprint`**
+
+- Pandoc engine
+
+- Quick
+
+- No preview
+
+- Best tool for most of the cases
+
+- French {{< fa frog >}}
+
+:::
+
+
+:::{.column width=33% .fragment}
+
+**`pagedjs-cli`**
+
+- Pandoc engine
+
+- No direct preview
+
+- Most complete tool
+
+- JS based
+
+:::
+:::
+
+## Design advices
+
+- Make your parameters explicit
+
+![](img/country_name_explicit.jpg)
+
+:::fragment
+- Think about the extreme cases like long names in margins
+
+![](img/long_name_2.png)
+
+![](img/long_name_1.png)
+:::
+
+## Design advices
+
+- Make your sections visuals with named pages & colors
+
+:::{layout="[1,1,1]" .shadow}
+![](img/psc_4.jpg){width=100%}
+
+![](img/psc_3.jpg){width=100%}
+
+![](img/psc 2.jpg){width=100%}
+:::
+
+## Design advices
+
+- Columns are great but difficult to handle
+
+:::{layout="[1,1]" .shadow}
+![](img/Afghanistan b.jpg){width=70%}
+
+![](img/or_voices_2.jpg){width=70%}
+:::
+
+
+## Create a template with [Typst](https://typst.app/)
+
+Set up the format + use partials:
+
+```{yaml}
+format: 
+  typst:
+    template-partials: 
+      - typst-template.typ
+      - typst-show.typ
+    font-paths: fonts/
+```
+
+- `typst-show.typ` transfer the parameters
+- `typst-template.typ` is the template
+
+:::fragment
+> {{< fa lightbulb >}} `font-paths` allow you to use custom fonts by putting them in a folder
+:::
+
+## Create a template with [Typst](https://typst.app/)
+
+`typst-show.typ`
+
+```{typst}
+#show: my-report.with(
+  // main params
+  $if(title)$
+    title: "$title$",
+  $endif$
+  $if(subtitle)$
+    subtitle: "$subtitle$",
+  $endif$
+
+  // add params
+  $if(country-name)$
+    country_name: "$country-name$",
+  $endif$
+  )
+```
+
+## Create a template with [Typst](https://typst.app/)
+
+`typst-template.typ`: **all is valid until replaced**
   
-  - pass parameters
-  - style
-  
-- Just write things one after another
+```{typst}
+// format with custom parameters
+#let my-report(
+  title: "Title",
+  subtitle: none,
+  country_name: none
+  body,
+) = {
+  // text default
+  set text(
+    font: "Calibri",
+    size: 11pt,
+  )
+
+  // --- Configure first page ---
+  set page(
+    "us-letter",
+    background: place(right, rect(fill: rgb(#123456), width: 30%, height: 100%)),
+    margin: (left: 1in, right: 1in, top: 0.7in, bottom: 1in),
+  )
+
+  // --- title grid ---
+  v(5%)
+  // logo
+  image("logo.svg", height: 10%)
+  v(10%)
+  pad(text(16pt, weight: "regular", country_name), right: 30%)
+  v(5%)
+
+  pagebreak()
+```
+
+## Create a template with [Typst](https://typst.app/)
+
+```{typst}
+  // --- Configure the rest of the pages ---
+  set page(
+    "us-letter",
+    background: place(top, rect(fill: rgb(#123456), width: 100%, height: 0.5in)),
+    footer: {
+      line(length: 100%)
+    },
+    margin: (left: 1in, right: 1in, top: 0.7in, bottom: 1in),
+  )
+
+  // --- headings ---
+  // level 1 is ## if there is no #
+  // level 2 is ###
+  // level 3 is ####
+  show heading.where(level: 1): it => [
+    #set text(17pt, weight: "bold")
+    #block(it.body)
+  ]
+
+  show heading.where(level: 2): it => [
+    #set text(fill: rgb(maincolor), size: 15pt, weight: "regular")
+    #block(it.body)
+  ]
+
+  show heading.where(level: 3): it => [
+    #set text(fill: rgb(maincolor), size: 12pt, weight: "regular")
+    #block(it.body)
+  ]
+
+  // --- body ---
+  body
+}
+```
 
 ## Create a template with CSS tools
 
-`pagedown` example (in French): 
-https://www.youtube.com/watch?v=Vk5q_pvp1EE
-https://github.com/tvroylandt/pagedown_rr2021
+- All the others tools are based on [CSS Paged Media](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_paged_media)
 
-## Quick how-to templating
+- Differences but more or less compatible between them
 
-Main page
-Margins
-Named pages
-Style
-Utility functions
+- I did a [full talk](https://github.com/tvroylandt/pagedown_rr2021) about how to template things (in French) for `pagedown`. See the video [{{< fa video >}}](https://www.youtube.com/watch?v=Vk5q_pvp1EE)
 
-## Lessons
+## Quick how-to
 
-- use CSS vars
-- pass content to CSS with vars (you can even parametrise images)
-- think about the extreme cases (long names)
-- remove some defaults
-- no bootstrap
-- absolute/relative positions
-- negative margins + positive paddings
-- child documents
+- Add your parameters as CSS vars: fonts, colors, margins, images
 
-## Tips
+```{css}
+:root {
+  /* colors */
+  --report-navy: #1f4675;
+  --report-light-blue: #59b8cd;
+  --report-red: #eb5a53;
 
-- make section visual (named pages)
-- use columns to make side-by-side comparison
-- don't try to fit too many cases, sometimes if your reports are generating too much outputs, you need two templates
+  /* fonts */
+  --main-font: "Calibri";
+  --header-font: "Montserrat";
 
-## Presenting `quarto.report`
+  /* margin units */
+  --unit: 0.7in;
+  --unit_neg: -0.45in;
+}
+```
+
+## Quick how-to
+
+- Create your global style with them :
+
+```{css}
+body {
+  font-family: var(--main-font);
+}
+h1, h2, h3 {
+  color: var(--report-red);
+}
+p {
+  font-weight: 400;
+  font-size: 12pt;
+  color: var(--report-navy);
+  padding-left: 0.55in;
+}
+```
+  
+> {{< fa lightbulb >}} Vars that have been created in the Quarto file can also be used
+
+## Quick how-to
+
+- Define page size and margins
+
+```{css}
+@page {
+  /* page size */
+  size: Letter;
+
+  /* margins */
+  margin-top: 1in;
+  margin-left: 0.3in;
+  margin-right: 1in;
+  margin-bottom: 1in;
+
+}
+```
+
+## Quick how-to
+
+- Add content in margins
+
+```{css}
+@page {
+  /* country name */
+  @top-left {
+    content: var(--country-name);
+  }
+   /* logo */
+  @top-right {
+    content: "";
+    width: 3.3in;
+    background: url(img/logo_white.svg);
+    background-repeat: no-repeat;
+    background-size: 3in;
+  }
+}
+```
+
+:::fragment
+> {{< fa lightbulb >}} Use `content: "";` to display the background color or image.
+:::
+
+## Quick how-to
+
+- Add content in margins
+
+```{css}
+@page {
+  /* numbering */
+  @bottom-right {
+    content: counter(page);
+    width: 7.1in;
+    font-weight: bold;
+  }
+}
+```
+
+> To learn more about content in margins [{{< fa link >}}](https://pagedjs.org/documentation/7-generated-content-in-margin-boxes/)
+
+## Quick how-to
+
+- Build title page
+
+```{css}
+@page:first{
+  background-image: var(--cover-url);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 5in, cover;
+  background-position: 10% 10%, 50% 50%;
+  @bottom-left {
+    display: none;
+  }
+}
+```
+
+- Don't forget `.title` and others
+
+:::fragment
+> {{< fa lightbulb >}} `display: none;` helps to remove the global content in margins
+:::
+
+## Quick how-to
+
+- Define named pages
+  
+    - with fenced div `:::named1` + `:::` 
+    - or classic HTML `<div class="named1">` + `</div>`
+    
+    - CSS side :
+
+```{css}
+.named1 {
+  page: .namedLayout;
+}
+
+@page .namedLayout {
+  @top-left {
+    background-color: var(--report-navy);
+    color: white;
+  }
+}
+```
+
+## Quick how-to
+
+- And the content inside too
+
+```{css}
+.named1 > h3 {
+  color: var(--report-navy);
+}
+```
+
+
+## Quick how-to
+
+- Define utility functions :
+
+  - columns (use [CSS Grid](https://www.w3schools.com/css/css_grid.asp) first !)
+  - `img` -> remove defaults margins
+  - ...
+
+:::fragment
+> {{< fa lightbulb >}} You can arrange some positions with negative margins and positive paddings. Play with them !
+:::
+
+:::fragment
+> {{< fa lightbulb >}} Since page size is fixed, think to use `position: absolute;` if needed
+:::
+
+## Presenting `quarto.report` [{{< iconify fa6-brands github >}}](https://github.com/kantiles/quarto.report)
+
+:::incremental
+- Quarto extension
+- based on `weasyprint`
+- Aim at facilitating templating
+- Can be use for parametrized reporting
+- Both R & Python
+:::
+
+:::fragment
+```{bash}
+quarto add kantiles/quarto.report
+```
+:::
+
+## Presenting `quarto.report` [{{< iconify fa6-brands github >}}](https://github.com/kantiles/quarto.report)
+
+Change parameters in the YAML (or `_quarto.yml` file)
+
+```{yaml}
+style:
+  font:
+    header: "Outfit"
+    main: "Montserrat"
+    mono: "Fira Code"
+    size: 12pt
+  color:
+    font: "#404040"
+    font-accent: "#fdfdfd"
+    accent: "#123456"
+    third: "#987654"
+  pagesize:
+    width: 210mm
+    height: 297mm
+  logo: url(logo_url)
+  main-img: url(img_url)
+```
+
+## `quarto.report` - `typewriter`
+
+```{yaml}
+format:
+    quarto.report-pdf+typewriter
+```
+
+- main image on title page
+- table of contents by default
+
+:::{layout="[1,1,1,1]" .shadow}
+![](img/typewriter_1.jpg){width=90%}
+
+![](img/typewriter_2.jpg){width=90%}
+
+![](img/typewriter_3.jpg){width=90%}
+
+![](img/typewriter_4.jpg){width=90%}
+:::
+
+## `quarto.report` - `chalk`
+
+```{yaml}
+format:
+    quarto.report-pdf+chalk
+```
+
+- two colors template
+- table of contents by default
+
+:::{layout="[1,1,1,1]" .shadow}
+![](img/chalk_1.jpg){width=90%}
+
+![](img/chalk_2.jpg){width=90%}
+
+![](img/chalk_3.jpg){width=90%}
+
+![](img/chalk_4.jpg){width=90%}
+:::
+
+
+## `quarto.report` - `corner`
+
+```{yaml}
+format:
+    quarto.report-pdf+corner
+```
+
+- well suited for parametrised reporting
+- one additional named page by default
+
+:::{layout="[1,1,1,1]" .shadow}
+![](img/corner_1.jpg){width=90%}
+
+![](img/corner_2.jpg){width=90%}
+
+![](img/corner_3.jpg){width=90%}
+
+![](img/corner_4.jpg){width=90%}
+:::
 
 # Data {background-image="img/reference.jpg"}
 
@@ -364,30 +839,34 @@ In time
 
 ## Declutter & highlight
 
-MORE SLIDES ON THIS ?
+> {{< fa magnifying-glass >}} David talked about all of this at Cascadia R conf [{{< fa link >}}](https://github.com/rfortherestofus/data-viz-parameterized-reporting)
 
+:::fragment
 - use facets
 - don't label everything
 - hide small values
 - think about labels position
 - highlight what's important
-
-See David advices about the content LINK
-
-https://cascadiarconf.com/2024/regular/david_keyes/
-https://github.com/rfortherestofus/data-viz-parameterized-reporting
+:::
 
 # Text {background-image="img/text.jpg"}
 
 ## Stay dynamic
 
+:::fragment
 - Be informative about comparisons :
 
   - growth
   - difference
-  
-- Use `glue` or `epoxy` LINK https://pkg.garrickadenbuie.com/epoxy/index.html
 
+:::
+
+:::fragment
+- Compute before display
+:::
+
+:::fragment
+- Use [`glue`](https://glue.tidyverse.org/) or [`epoxy`](https://pkg.garrickadenbuie.com/epoxy/index.html)
 
 ````{verbatim}
 ```{epoxy, .data=txt_data_1_3}
@@ -398,6 +877,7 @@ In {year}, measles elimination was <span class = "txt-navy">achieved
 not achieved</span> in {nb_not_achieved} countries.
 ```
 ````
+:::
 
 ## Highlight
 
@@ -426,11 +906,22 @@ Use :
 - list of parameters
 - `map`
 - `quarto_render`
-- `fs::file_move`
 
 ## Render them all
 
-EXAMPLE
+```{r}
+map(
+  country_list,
+  \(x)quarto_render(
+    input = "path.qmd",
+    output = glue::glue("report_{x}"),
+    params = list(country = country)
+  ),
+  .progress = TRUE
+)
+```
+
+> {{< fa lightbulb >}} Use `fs::file_move` to move your reports to the right folder (see [{{< fa link >}}](https://github.com/quarto-dev/quarto-r/issues/81))
 
 ## Quality insurance
 
