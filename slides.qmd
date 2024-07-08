@@ -453,6 +453,14 @@ format:
 
 - I did a [full talk](https://github.com/tvroylandt/pagedown_rr2021) about how to template things (in French) for `pagedown`. See the video [{{< fa video >}}](https://www.youtube.com/watch?v=Vk5q_pvp1EE)
 
+:::fragment
+- Print to PDF:
+
+  - output to HTML + use bash command `weasyprint` (or `pagedjs-cli`)
+  - output to PDF + use `pdf-engine: weasyprint`
+
+:::
+
 ## Quick how-to
 
 - Add your parameters as CSS vars: fonts, colors, margins, images
